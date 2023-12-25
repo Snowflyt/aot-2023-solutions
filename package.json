@@ -1,0 +1,39 @@
+{
+  "name": "aot-2023-solutions",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Solutions for TypeHero's Advent of Typescript 2023",
+  "keywords": [
+    "typescript",
+    "type gymnastics"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Snowfly-T/aot-2023-solutions"
+  },
+  "license": "MIT",
+  "author": "Snowflyt <gaoge011022@163.com>",
+  "type": "module",
+  "scripts": {
+    "format": "prettier --write {src,test}/**/*.{json,js,jsx,ts,tsx}",
+    "lint": "eslint {src,test}/**/*.{js,jsx,ts,tsx}",
+    "lint:fix": "eslint --fix {src,test}/**/*.{js,jsx,ts,tsx}",
+    "test-types": "typroof"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^8.10.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-sort-destructure-keys": "^1.5.0",
+    "hotscript": "^1.0.13",
+    "prettier": "^2.8.8",
+    "prettier-plugin-packagejson": "^2.4.7",
+    "type-testing": "^0.2.0",
+    "typescript": "^5.3.3",
+    "typroof": "^0.1.1"
+  }
+}
