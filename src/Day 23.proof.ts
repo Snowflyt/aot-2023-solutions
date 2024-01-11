@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'typroof';
+import { describe, equal, expect, it } from 'typroof';
 
 import type {
   Connect4,
@@ -74,15 +74,15 @@ describe('Connect4', () => {
   };
 
   it('should start a new game', () => {
-    expect<Connect4<NewGame, 0>>().toEqual<test_move1_expected>();
+    expect<Connect4<NewGame, 0>>().to(equal<test_move1_expected>);
   });
 
   it('should move a chip', () => {
-    expect<Connect4<test_move1_expected, 0>>().toEqual<test_move2_expected>();
-    expect<Connect4<test_move2_expected, 0>>().toEqual<test_move3_expected>();
-    expect<Connect4<test_move3_expected, 1>>().toEqual<test_move4_expected>();
-    expect<Connect4<test_move4_expected, 2>>().toEqual<test_move5_expected>();
-    expect<Connect4<test_move5_expected, 1>>().toEqual<test_move6_expected>();
+    expect<Connect4<test_move1_expected, 0>>().to(equal<test_move2_expected>);
+    expect<Connect4<test_move2_expected, 0>>().to(equal<test_move3_expected>);
+    expect<Connect4<test_move3_expected, 1>>().to(equal<test_move4_expected>);
+    expect<Connect4<test_move4_expected, 2>>().to(equal<test_move5_expected>);
+    expect<Connect4<test_move5_expected, 1>>().to(equal<test_move6_expected>);
   });
 
   it('should check for a win (row)', () => {
@@ -101,17 +101,19 @@ describe('Connect4', () => {
         },
         3
       >
-    >().toEqual<{
-      board: [
-        ['  ', '  ', '  ', '  ', '  ', '  ', '  '],
-        ['  ', '  ', '  ', '  ', '  ', '  ', '  '],
-        ['🟡', '  ', '  ', '  ', '  ', '  ', '  '],
-        ['🟡', '  ', '  ', '  ', '  ', '  ', '  '],
-        ['🔴', '🔴', '🔴', '🔴', '  ', '  ', '  '],
-        ['🟡', '🔴', '🟡', '🟡', '  ', '  ', '  '],
-      ];
-      state: '🔴 Won';
-    }>();
+    >().to(
+      equal<{
+        board: [
+          ['  ', '  ', '  ', '  ', '  ', '  ', '  '],
+          ['  ', '  ', '  ', '  ', '  ', '  ', '  '],
+          ['🟡', '  ', '  ', '  ', '  ', '  ', '  '],
+          ['🟡', '  ', '  ', '  ', '  ', '  ', '  '],
+          ['🔴', '🔴', '🔴', '🔴', '  ', '  ', '  '],
+          ['🟡', '🔴', '🟡', '🟡', '  ', '  ', '  '],
+        ];
+        state: '🔴 Won';
+      }>,
+    );
 
     expect<
       Connect4<
@@ -128,17 +130,19 @@ describe('Connect4', () => {
         },
         1
       >
-    >().toEqual<{
-      board: [
-        ['  ', '  ', '  ', '  ', '  ', '  ', '  '],
-        ['  ', '  ', '  ', '  ', '  ', '  ', '  '],
-        ['🔴', '  ', '  ', '  ', '  ', '  ', '  '],
-        ['🟡', '  ', '  ', '  ', '  ', '  ', '  '],
-        ['🔴', '  ', '🔴', '🔴', '  ', '  ', '  '],
-        ['🟡', '🟡', '🟡', '🟡', '  ', '  ', '  '],
-      ];
-      state: '🟡 Won';
-    }>();
+    >().to(
+      equal<{
+        board: [
+          ['  ', '  ', '  ', '  ', '  ', '  ', '  '],
+          ['  ', '  ', '  ', '  ', '  ', '  ', '  '],
+          ['🔴', '  ', '  ', '  ', '  ', '  ', '  '],
+          ['🟡', '  ', '  ', '  ', '  ', '  ', '  '],
+          ['🔴', '  ', '🔴', '🔴', '  ', '  ', '  '],
+          ['🟡', '🟡', '🟡', '🟡', '  ', '  ', '  '],
+        ];
+        state: '🟡 Won';
+      }>,
+    );
   });
 
   it('should check for a win (diagonal)', () => {
@@ -157,17 +161,19 @@ describe('Connect4', () => {
         },
         3
       >
-    >().toEqual<{
-      board: [
-        ['  ', '  ', '  ', '  ', '  ', '  ', '  '],
-        ['  ', '  ', '  ', '  ', '  ', '  ', '  '],
-        ['  ', '  ', '  ', '🟡', '  ', '  ', '  '],
-        ['  ', '  ', '🟡', '🔴', '  ', '  ', '  '],
-        ['🔴', '🟡', '🔴', '🔴', '  ', '  ', '  '],
-        ['🟡', '🔴', '🟡', '🟡', '  ', '  ', '  '],
-      ];
-      state: '🟡 Won';
-    }>();
+    >().to(
+      equal<{
+        board: [
+          ['  ', '  ', '  ', '  ', '  ', '  ', '  '],
+          ['  ', '  ', '  ', '  ', '  ', '  ', '  '],
+          ['  ', '  ', '  ', '🟡', '  ', '  ', '  '],
+          ['  ', '  ', '🟡', '🔴', '  ', '  ', '  '],
+          ['🔴', '🟡', '🔴', '🔴', '  ', '  ', '  '],
+          ['🟡', '🔴', '🟡', '🟡', '  ', '  ', '  '],
+        ];
+        state: '🟡 Won';
+      }>,
+    );
   });
 
   it('should check for a draw', () => {
@@ -186,16 +192,18 @@ describe('Connect4', () => {
         },
         6
       >
-    >().toEqual<{
-      board: [
-        ['🟡', '🔴', '🔴', '🟡', '🟡', '🔴', '🟡'],
-        ['🔴', '🟡', '🟡', '🔴', '🔴', '🟡', '🔴'],
-        ['🟡', '🔴', '🔴', '🟡', '🟡', '🔴', '🟡'],
-        ['🔴', '🟡', '🟡', '🔴', '🔴', '🟡', '🔴'],
-        ['🟡', '🔴', '🔴', '🟡', '🟡', '🔴', '🟡'],
-        ['🔴', '🟡', '🟡', '🔴', '🔴', '🟡', '🔴'],
-      ];
-      state: 'Draw';
-    }>();
+    >().to(
+      equal<{
+        board: [
+          ['🟡', '🔴', '🔴', '🟡', '🟡', '🔴', '🟡'],
+          ['🔴', '🟡', '🟡', '🔴', '🔴', '🟡', '🔴'],
+          ['🟡', '🔴', '🔴', '🟡', '🟡', '🔴', '🟡'],
+          ['🔴', '🟡', '🟡', '🔴', '🔴', '🟡', '🔴'],
+          ['🟡', '🔴', '🔴', '🟡', '🟡', '🔴', '🟡'],
+          ['🔴', '🟡', '🟡', '🔴', '🔴', '🟡', '🔴'],
+        ];
+        state: 'Draw';
+      }>,
+    );
   });
 });

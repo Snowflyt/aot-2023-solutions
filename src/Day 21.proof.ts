@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'typroof';
+import { describe, equal, expect, it } from 'typroof';
 
 import type { NewGame, TicTacToe } from './Day 21 - Tic Tac Toe';
 
@@ -50,22 +50,22 @@ describe('TicTacToe', () => {
   };
 
   it('should start a new game', () => {
-    expect<TicTacToe<NewGame, 'top-center'>>().toEqual<test_move1_expected>();
+    expect<TicTacToe<NewGame, 'top-center'>>().to(equal<test_move1_expected>);
   });
 
   it('should place a piece', () => {
-    expect<
-      TicTacToe<test_move1_expected, 'top-left'>
-    >().toEqual<test_move2_expected>();
-    expect<
-      TicTacToe<test_move2_expected, 'middle-center'>
-    >().toEqual<test_move3_expected>();
-    expect<
-      TicTacToe<test_move3_expected, 'bottom-left'>
-    >().toEqual<test_move4_expected>();
-    expect<
-      TicTacToe<test_move4_expected, 'bottom-right'>
-    >().toEqual<test_move5_expected>();
+    expect<TicTacToe<test_move1_expected, 'top-left'>>().to(
+      equal<test_move2_expected>,
+    );
+    expect<TicTacToe<test_move2_expected, 'middle-center'>>().to(
+      equal<test_move3_expected>,
+    );
+    expect<TicTacToe<test_move3_expected, 'bottom-left'>>().to(
+      equal<test_move4_expected>,
+    );
+    expect<TicTacToe<test_move4_expected, 'bottom-right'>>().to(
+      equal<test_move5_expected>,
+    );
   });
 
   it('should check for a win', () => {
@@ -78,9 +78,9 @@ describe('TicTacToe', () => {
       ];
       state: '❌ Won';
     };
-    expect<
-      TicTacToe<test_move4_expected, 'bottom-center'>
-    >().toEqual<test_x_win_expected>();
+    expect<TicTacToe<test_move4_expected, 'bottom-center'>>().to(
+      equal<test_x_win_expected>,
+    );
 
     type test_o_win_expected = {
       // prettier-ignore
@@ -91,15 +91,15 @@ describe('TicTacToe', () => {
       ];
       state: '⭕ Won';
     };
-    expect<
-      TicTacToe<test_move5_expected, 'middle-left'>
-    >().toEqual<test_o_win_expected>();
+    expect<TicTacToe<test_move5_expected, 'middle-left'>>().to(
+      equal<test_o_win_expected>,
+    );
   });
 
   it('should not allow a move on a non-empty cell', () => {
-    expect<
-      TicTacToe<test_move1_expected, 'top-center'>
-    >().toEqual<test_move1_expected>();
+    expect<TicTacToe<test_move1_expected, 'top-center'>>().to(
+      equal<test_move1_expected>,
+    );
   });
 
   it('should check for a draw', () => {
@@ -121,8 +121,8 @@ describe('TicTacToe', () => {
       ];
       state: 'Draw';
     };
-    expect<
-      TicTacToe<test_before_draw, 'bottom-right'>
-    >().toEqual<test_draw_expected>();
+    expect<TicTacToe<test_before_draw, 'bottom-right'>>().to(
+      equal<test_draw_expected>,
+    );
   });
 });

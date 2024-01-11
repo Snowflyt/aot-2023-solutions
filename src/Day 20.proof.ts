@@ -1,4 +1,4 @@
-import { expect, test } from 'typroof';
+import { equal, expect, test } from 'typroof';
 
 import type { ToAsciiArt } from './Day 20 - TypeScript ASCII Art!';
 
@@ -13,7 +13,7 @@ test('ToAsciiArt', () => {
     '░░█ ░░█▀█ ██▀ █ ▀▀█ ░█ ░█ ▀ █ █▀█ ▀▀█ ░░',
     '░░▀▀▀ ▀ ▀ ▀ ▀ ▀ ▀▀▀ ░▀ ░▀ ░░▀ ▀ ▀ ▀▀▀ ░░',
   ];
-  expect<test_0_actual>().toEqual<test_0_expected>();
+  expect<test_0_actual>().to(equal<test_0_expected>);
 
   type test_1_actual =
     // ^?
@@ -26,7 +26,7 @@ test('ToAsciiArt', () => {
     '░░#░░░#░░░#░▀█▀ █▀▀ █▀█ ██▀ ░#░░░#░░░#░░',
     '░░░░#░░░#░░░░▀ ░▀▀▀ ▀ ▀ ▀ ▀ ░░░#░░░#░░░░',
   ];
-  expect<test_1_actual>().toEqual<test_1_expected>();
+  expect<test_1_actual>().to(equal<test_1_expected>);
 
   type test_2_actual =
     // ^?
@@ -42,7 +42,7 @@ test('ToAsciiArt', () => {
     '░░#░░░#░░░#░░░#░░░#░░░#░',
     '░░░░#░░░#░░░#░░░#░░░#░░░',
   ];
-  expect<test_2_actual>().toEqual<test_2_expected>();
+  expect<test_2_actual>().to(equal<test_2_expected>);
 
   type test_3_actual =
     // ^?
@@ -58,5 +58,5 @@ test('ToAsciiArt', () => {
     '░░░░#░░░#░░░#░░░#░░░#░░░#░░░',
     '░░#░░░#░░░#░░░#░░░#░░░#░░░#░',
   ];
-  expect<test_3_actual>().toEqual<test_3_expected>();
+  expect<test_3_actual>().to(equal<test_3_expected>);
 });

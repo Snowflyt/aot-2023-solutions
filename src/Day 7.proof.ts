@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'typroof';
+import { describe, equal, expect, it } from 'typroof';
 
 import type { AppendGood } from './Day 7 - Filtering The Children (part 2)';
 
@@ -16,6 +16,6 @@ describe('AppendGood', () => {
       good_trash: { address: '637 starlight way' };
       good_candace: { address: '12 aurora' };
     };
-    expect<AppendGood<WellBehavedList>>().toEqual<test_wellBehaved_expected>();
+    expect<AppendGood<WellBehavedList>>().to(equal<test_wellBehaved_expected>);
   });
 });

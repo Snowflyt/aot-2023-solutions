@@ -1,4 +1,4 @@
-import { expect, test } from 'typroof';
+import { equal, expect, test } from 'typroof';
 
 import type { SantaListProtector } from './Day 11 - Protect the List';
 
@@ -38,7 +38,7 @@ test('SantaListProtector', () => {
       };
     };
   };
-  expect<test_0_actual>().toEqual<test_0_expected>();
+  expect<test_0_actual>().to(equal<test_0_expected>);
 
   type test_1_actual = SantaListProtector<{
     // ^?
@@ -51,5 +51,5 @@ test('SantaListProtector', () => {
     readonly prime: string;
     readonly netflix: { readonly isChill: boolean };
   };
-  expect<test_1_actual>().toEqual<test_1_expected>();
+  expect<test_1_actual>().to(equal<test_1_expected>);
 });

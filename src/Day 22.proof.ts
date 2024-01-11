@@ -1,4 +1,4 @@
-import { expect, test } from 'typroof';
+import { beFalse, beTrue, expect, test } from 'typroof';
 
 import type { Validate } from './Day 22 - Reindeer Sudoku';
 
@@ -17,7 +17,7 @@ test('Validate', () => {
         [['❤️', '🌟', '☄️'], ['🔴', '🌩️', '⚡'], ['💃', '🦌', '💨']],
       ]
     >
-  >().toBeTrue();
+  >().to(beTrue);
 
   expect<
     Validate<
@@ -33,7 +33,7 @@ test('Validate', () => {
         [['⚡', '🌩️', '🌟'], ['☄️', '💨', '💃'], ['🦌', '❤️', '🔴']],
       ]
     >
-  >().toBeTrue();
+  >().to(beTrue);
 
   expect<
     Validate<
@@ -50,7 +50,7 @@ test('Validate', () => {
         [['⚡', '🦌', '🌩️'], ['💨', '❤️', '💃'], ['🔴', '🌟', '☄️']],
       ]
     >
-  >().toBeTrue();
+  >().to(beTrue);
 
   expect<
     Validate<
@@ -67,7 +67,7 @@ test('Validate', () => {
         [['❤️', '🌟', '☄️'], ['🔴', '🌩️', '⚡'], ['💃', '🦌', '💨']],
       ]
     >
-  >().toBeFalse();
+  >().to(beFalse);
 
   expect<
     Validate<
@@ -84,7 +84,7 @@ test('Validate', () => {
         [['⚡', '🌩️', '🌟'], ['☄️', '💨', '💃'], ['🦌', '❤️', '🔴']],
       ]
     >
-  >().toBeFalse();
+  >().to(beFalse);
 
   expect<
     Validate<
@@ -101,7 +101,7 @@ test('Validate', () => {
         [['💃', '🌟', '🦌'], ['🔴', '💨', '❤️'], ['🌩️', '☄️', '⚡']],
       ]
     >
-  >().toBeFalse();
+  >().to(beFalse);
 
   expect<
     Validate<
@@ -117,7 +117,7 @@ test('Validate', () => {
         [['🔴', '💨', '💃'], ['🦌', '☄️', '❤️'], ['🌩️', '🌟', '⚡']],
       ]
     >
-  >().toBeFalse();
+  >().to(beFalse);
 
   expect<
     Validate<
@@ -134,5 +134,5 @@ test('Validate', () => {
         [['🦌', '🔴', '💃'], ['🌩️', '☄️', '💨'], ['⚡', '❤️', '🌟']],
       ]
     >
-  >().toBeFalse();
+  >().to(beFalse);
 });

@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'typroof';
+import { describe, equal, expect, it } from 'typroof';
 
 import type { Move } from './Day 24 - Santa is stuck!';
 
@@ -173,66 +173,66 @@ describe('Move', () => {
   ];
 
   it('should not move up if there is a tree', () => {
-    expect<Move<Maze0, 'up'>>().toEqual<Maze0>();
+    expect<Move<Maze0, 'up'>>().to(equal<Maze0>);
   });
 
   it('should move down if there is no tree', () => {
-    expect<Move<Maze0, 'down'>>().toEqual<Maze1>();
-    expect<Move<Maze1, 'down'>>().toEqual<Maze2>();
+    expect<Move<Maze0, 'down'>>().to(equal<Maze1>);
+    expect<Move<Maze1, 'down'>>().to(equal<Maze2>);
   });
 
   it('should not move left if there is a tree', () => {
-    expect<Move<Maze2, 'left'>>().toEqual<Maze2>();
+    expect<Move<Maze2, 'left'>>().to(equal<Maze2>);
   });
 
   it('should move up to the previous maze', () => {
-    expect<Move<Maze2, 'up'>>().toEqual<Maze1>();
+    expect<Move<Maze2, 'up'>>().to(equal<Maze1>);
   });
 
   it('should not move right if there is a tree', () => {
-    expect<Move<Maze2, 'right'>>().toEqual<Maze2>();
+    expect<Move<Maze2, 'right'>>().to(equal<Maze2>);
   });
 
   it('should continue moving down if there is no tree', () => {
-    expect<Move<Maze2, 'down'>>().toEqual<Maze3>();
-    expect<Move<Maze3, 'down'>>().toEqual<Maze4>();
+    expect<Move<Maze2, 'down'>>().to(equal<Maze3>);
+    expect<Move<Maze3, 'down'>>().to(equal<Maze4>);
   });
 
   it('should move left if there is no tree', () => {
-    expect<Move<Maze4, 'left'>>().toEqual<Maze5>();
-    expect<Move<Maze5, 'left'>>().toEqual<Maze6>();
+    expect<Move<Maze4, 'left'>>().to(equal<Maze5>);
+    expect<Move<Maze5, 'left'>>().to(equal<Maze6>);
   });
 
   it('should not move left if there is a tree', () => {
-    expect<Move<Maze6, 'left'>>().toEqual<Maze6>();
+    expect<Move<Maze6, 'left'>>().to(equal<Maze6>);
   });
 
   it('should continue moving up if there is no tree', () => {
-    expect<Move<Maze6, 'up'>>().toEqual<Maze7>();
+    expect<Move<Maze6, 'up'>>().to(equal<Maze7>);
   });
 
   it('should continue moving left if there is no tree', () => {
-    expect<Move<Maze7, 'left'>>().toEqual<Maze8>();
+    expect<Move<Maze7, 'left'>>().to(equal<Maze8>);
   });
 
   it('should move right to go back to the previous maze', () => {
-    expect<Move<Maze8, 'right'>>().toEqual<Maze7>();
+    expect<Move<Maze8, 'right'>>().to(equal<Maze7>);
   });
 
   it('should continue moving left if there is no tree', () => {
-    expect<Move<Maze8, 'left'>>().toEqual<Maze9>();
-    expect<Move<Maze9, 'left'>>().toEqual<Maze10>();
+    expect<Move<Maze8, 'left'>>().to(equal<Maze9>);
+    expect<Move<Maze9, 'left'>>().to(equal<Maze10>);
   });
 
   it('should continue moving down if there is no tree', () => {
-    expect<Move<Maze10, 'down'>>().toEqual<Maze11>();
+    expect<Move<Maze10, 'down'>>().to(equal<Maze11>);
   });
 
   it('should continue moving left if there is no tree', () => {
-    expect<Move<Maze11, 'left'>>().toEqual<Maze12>();
+    expect<Move<Maze11, 'left'>>().to(equal<Maze12>);
   });
 
   it('should win when getting out of the maze (fill with cookies)', () => {
-    expect<Move<Maze12, 'left'>>().toEqual<MazeWin>();
+    expect<Move<Maze12, 'left'>>().to(equal<MazeWin>);
   });
 });

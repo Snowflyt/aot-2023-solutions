@@ -16,7 +16,7 @@ yarn
 pnpm install
 ```
 
-This project uses [Typroof](https://github.com/Snowfly-T/typroof) to test TypeScript type definitions. It is a CLI tool similar to [tsd](https://github.com/tsdjs/tsd), but use BDD-style assertions like in [Jest](https://jestjs.io/) or [Vitest](https://vitest.dev/). It is also faster, more flexible and more lightweight than tsd, and you can even define your only assertion methods. See [its documentation](https://github.com/Snowfly-T/typroof?tab=readme-ov-file) for more details.
+This project uses [Typroof](https://github.com/Snowfly-T/typroof) to test TypeScript type definitions. It is a CLI tool similar to [tsd](https://github.com/tsdjs/tsd), but use BDD-style assertions like in [Jest](https://jestjs.io/) or [Vitest](https://vitest.dev/). It is also faster, more flexible and more lightweight than tsd, WYSIWYG, and you can even define your only assertion methods. See [its documentation](https://github.com/Snowfly-T/typroof?tab=readme-ov-file) for more details.
 
 After installing dependencies, you can run the following command to use Typroof to test type definitions:
 

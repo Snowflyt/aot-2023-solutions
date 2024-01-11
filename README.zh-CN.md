@@ -16,7 +16,7 @@ yarn
 pnpm install
 ```
 
-该项目使用 [Typroof](https://github.com/Snowfly-T/typroof) 测试 TypeScript 类型定义——这是个类似于 [tsd](https://github.com/tsdjs/tsd) 的 CLI 工具，但使用类似于 [Jest](https://jestjs.io/) 或 [Vitest](https://vitest.dev/) 的 BDD 风格断言。它比 tsd 更快、更灵活、更轻量，你甚至可以定义自己的断言方法。更多信息请参阅 [Typroof 的文档](https://github.com/Snowfly-T/typroof?tab=readme-ov-file)。
+该项目使用 [Typroof](https://github.com/Snowfly-T/typroof) 测试 TypeScript 类型定义——这是个类似于 [tsd](https://github.com/tsdjs/tsd) 的 CLI 工具，但使用类似于 [Jest](https://jestjs.io/) 或 [Vitest](https://vitest.dev/) 的 BDD 风格断言。它比 tsd 更快、更灵活、更轻量，且所见即所得，你甚至可以定义自己的断言方法。更多信息请参阅 [Typroof 的文档](https://github.com/Snowfly-T/typroof?tab=readme-ov-file)。
 
 在安装依赖后，你可以运行以下命令使用 Typroof 测试类型定义：
 
