@@ -1,6 +1,6 @@
 {
   "name": "aot-2023-solutions",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "Solutions for TypeHero's Advent of Typescript 2023",
   "keywords": [
@@ -21,8 +21,8 @@
     "test-types": "typroof"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^6.18.1",
-    "@typescript-eslint/parser": "^6.18.1",
+    "@typescript-eslint/eslint-plugin": "^6.19.0",
+    "@typescript-eslint/parser": "^6.19.0",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^8.10.0",
     "eslint-import-resolver-typescript": "^3.6.1",
@@ -34,6 +34,6 @@
     "prettier-plugin-packagejson": "^2.4.9",
     "type-testing": "^0.2.0",
     "typescript": "^5.3.3",
-    "typroof": "^0.2.1"
+    "typroof": "^0.2.5"
   }
 }
